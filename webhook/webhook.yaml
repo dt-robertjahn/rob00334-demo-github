@@ -20,6 +20,7 @@ spec:
             key: GITHUBTOKEN
       subscriptionID: 867d0a56-69ef-4dde-87c3-264e81a14362
     - type: sh.keptn.event.github-action-silent.finished
+      sendFinished: true
       requests:
         - "curl --header 'Authorization: token
           {{.env.secret_githubsecret_GITHUBTOKEN}}' --request POST --data
