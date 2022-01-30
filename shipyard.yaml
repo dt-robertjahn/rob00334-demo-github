@@ -5,6 +5,8 @@ metadata:
 spec:
   stages:
     - name: "production"
-      tasks:
-        - name: github-action-interactive
-        - name: github-action-silent
+    sequences:
+      - name: demo-github-action
+        tasks:
+          - name: github-action-interactive
+          - name: github-action-silent
