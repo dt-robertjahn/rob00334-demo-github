@@ -4,5 +4,7 @@ metadata:
   name: "ca-demo-github"
 spec:
   stages:
-    - name: github-action-interactive
-    - name: github-action-silent
+    - name: "production"
+      tasks:
+        - name: github-action-interactive
+        - name: github-action-silent
