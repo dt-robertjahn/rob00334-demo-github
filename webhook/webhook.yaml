@@ -36,3 +36,17 @@ spec:
             name: github-secret
             key: GITHUBTOKEN
       subscriptionID: 867d0a56-69ef-4dde-87c3-264e81a14362
+    - type: sh.keptn.event.evaluation.finished
+      requests:
+        - "curl --header 'Authorization: Bearer {{.env.secret_gremlin_token}}'
+          --header 'Content-Type: application/json' --request POST --data
+          '{\"hypothesis\":\"Traffic will be load-balanced to the two unaffected
+          hosts.\"}'
+          https://api.gremlin.com/v1/scenarios/7689a9ce-54dc-4015-89a9-ce54dcc0\
+          1533/runs?teamId=54a4a0b0-c54d-4e4c-a4a0-b0c54d5e4c7a"
+      envFrom:
+        - name: secret_gremlin_token
+          secretRef:
+            name: gremlin
+            key: token
+      subscriptionID: 91f90864-07fc-4e82-a14d-d32e8749f1da
