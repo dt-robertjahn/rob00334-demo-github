@@ -9,5 +9,12 @@ spec:
         - name: demo-github-action
           tasks: 
             - name: github-action-interactive
+            - name: "evaluation"
+              properties:
+                timeframe: "5m"
             - name: github-action-silent
-            - name: github-action-silent
+        - name: demo-ca-sequence
+          tasks: 
+            - name: evaluation
+              properties:
+                timeframe: "5m"
