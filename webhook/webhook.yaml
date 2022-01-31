@@ -19,19 +19,3 @@ spec:
             name: github-secret
             key: GITHUBTOKEN
       subscriptionID: 867d0a56-69ef-4dde-87c3-264e81a14362
-    - type: sh.keptn.event.github-action-silent.triggered
-      sendFinished: true
-      requests:
-        - "curl --header 'Authorization: token
-          {{.env.secret_githubsecret_GITHUBTOKEN}}' --request POST --data
-          '{\"event_type\":\"silent\",\"client_payload\":{\"type\":\"{{.type}}\
-          \",\"project\":\"{{.data.project}}\",\"service\":\"{{.data.service}}\
-          \",\"stage\":\"{{.data.stage}}\",\"shkeptncontext\":\"{{.shkeptnconte\
-          xt}}\",\"id\":\"{{.id}}\"}}'
-          https://api.github.com/repos/dt-alliances/ca-demo-github/dispatches"
-      envFrom:
-        - name: secret_githubsecret_GITHUBTOKEN
-          secretRef:
-            name: github-secret
-            key: GITHUBTOKEN
-      subscriptionID: 5eebbb8d-42eb-4d9c-9405-c3fe864289f6
