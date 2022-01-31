@@ -10,3 +10,4 @@ spec:
           tasks: 
             - name: github-action-interactive
             - name: github-action-silent
+            - name: github-action-silent
