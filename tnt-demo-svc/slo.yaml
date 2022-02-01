@@ -24,7 +24,6 @@ objectives:
   displayName: ""
   pass:
   - criteria:
-    - <+50%
     - <550
   warning: []
   weight: 1
@@ -33,7 +32,6 @@ objectives:
   displayName: ""
   pass:
   - criteria:
-    - <+50%
     - <500
   warning: []
   weight: 1
@@ -68,7 +66,6 @@ objectives:
   displayName: ""
   pass:
   - criteria:
-    - <+10%
     - <200
   warning: []
   weight: 1
