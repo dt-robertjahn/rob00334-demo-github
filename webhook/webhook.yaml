@@ -50,3 +50,8 @@ spec:
             name: gremlin
             key: token
       subscriptionID: 91f90864-07fc-4e82-a14d-d32e8749f1da
+    - type: sh.keptn.event.evaluation.finished
+      requests:
+        - "curl --header 'Authorization: f4ebc9b7' --request POST
+          https://webhook.site/f4ebc9b7-e00a-4e90-847a-e40a21bb49e8"
+      subscriptionID: 0b0272e6-c5e9-4ed0-891a-49dcd010e885
