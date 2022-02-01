@@ -16,7 +16,7 @@ objectives:
   displayName: ""
   pass:
   - criteria:
-    - <1
+    - <1000
   warning: []
   weight: 1
   key_sli: false
