@@ -50,14 +50,3 @@ spec:
             name: gremlin
             key: token
       subscriptionID: 91f90864-07fc-4e82-a14d-d32e8749f1da
-    - type: sh.keptn.event.evaluation.finished
-      requests:
-        - "curl --header 'Authorization:
-          https://api.gremlin.com/v1/scenarios/7689a9ce-54dc-4015-89a9-ce54dcc0\
-          \\           1533/runs?teamId=54a4a0b0-c54d-4e4c-a4a0-b0c54d5e4c7a'
-          --request POST
-          https://api.gremlin.com/v1/scenarios/7689a9ce-54dc-4015-89a9-ce54dcc0\
-          \\           1533/runs?teamId=5https://api.gremlin.com/v1/scenarios/7\
-          689a9ce-54dc-4015-89a9-ce54dcc0\\           1533/runs?teamId=54a4a0b0\
-          -c54d-4e4c-a4a0-b0c54d5e4c7a"
-      subscriptionID: 0b0272e6-c5e9-4ed0-891a-49dcd010e885
