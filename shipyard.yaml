@@ -20,4 +20,5 @@ spec:
               properties:
                 timeframe: "5m"
             - name: updatejira
+            - name: updatejira
             
