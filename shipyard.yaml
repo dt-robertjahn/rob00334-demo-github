@@ -9,12 +9,13 @@ spec:
         - name: demo-github-action
           tasks: 
             - name: github-action-interactive
-            - name: "evaluation"
+            - name: evaluation
               properties:
                 timeframe: "5m"
             - name: github-action-silent
         - name: demo-jira
           tasks: 
             - name: createjira
+            - name: evaluation
             - name: updatejira
             
