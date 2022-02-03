@@ -36,15 +36,3 @@ spec:
             name: github-secret
             key: GITHUBTOKEN
       subscriptionID: 867d0a56-69ef-4dde-87c3-264e81a14362
-    - type: sh.keptn.event.evaluation.triggered
-      requests:
-        - "curl --header 'Content-type: application/json' --request POST --data
-          '{\"event\":\"{{.type}}\",\"stage\":\"{{.data.stage}}\",\"shkeptncont\
-          ext\":\"{{.shkeptncontext}}\",\"id\":\"{{.id}}\"}'
-          https://{{.env.secret_jirawebhook_url}}"
-      envFrom:
-        - name: secret_jirawebhook_url
-          secretRef:
-            name: jirawebhook
-            key: url
-      subscriptionID: 0dada9e6-745e-4cdb-9377-75b01120b442
