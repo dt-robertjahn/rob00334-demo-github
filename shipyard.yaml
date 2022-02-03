@@ -17,11 +17,5 @@ spec:
           tasks: 
             - name: createjira
             - name: evaluation
-              properties:
-                timeframe: "5m"
-            - name: approval
-              properties: 
-                pass: manual
-                warning: manual
             - name: updatejira
             
