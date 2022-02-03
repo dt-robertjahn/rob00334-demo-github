@@ -15,7 +15,6 @@ spec:
             - name: github-action-silent
         - name: demo-jira
           tasks: 
-            - name: create-jira
             - name: evaluation
               properties:
                 timeframe: "5m"
