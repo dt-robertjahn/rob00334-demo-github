@@ -15,6 +15,7 @@ spec:
             - name: github-action-silent
         - name: demo-jira
           tasks: 
+            - name: create-jira
             - name: update-jira
             - name: evaluation
               properties:
