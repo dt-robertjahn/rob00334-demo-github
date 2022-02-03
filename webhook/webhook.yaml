@@ -36,3 +36,19 @@ spec:
             name: github-secret
             key: GITHUBTOKEN
       subscriptionID: 867d0a56-69ef-4dde-87c3-264e81a14362
+    - type: sh.keptn.event.create-jira.triggered
+      requests:
+        - "curl --header 'Content-type: application/json' --request POST --data
+          '{\"event\":\"{{.type}}\",\"project\":\"{{.data.project}}\",\"service\
+          \":\"{{.data.service}}\",\"stage\":\"{{.data.stage}}\",\"shkeptnconte\
+          xt\":\"{{.shkeptncontext}}\",\"id\":\"{{.id}}\",\"create-jira\":{\"url\
+          \":\".data.create-jira.url\",\"key\":\".data.create-jira.key\",\"summ\
+          ary\":\".data.create-jira.summary\"}}'
+          https://automation.atlassian.com/pro/hooks/{{.env.secret_jirawebhook_\
+          id}}"
+      envFrom:
+        - name: secret_jirawebhook_id
+          secretRef:
+            name: jirawebhook
+            key: id
+      subscriptionID: 0dada9e6-745e-4cdb-9377-75b01120b442
