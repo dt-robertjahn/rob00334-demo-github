@@ -16,7 +16,7 @@ spec:
         - name: demo-jira
           tasks: 
             - name: createjira
-            - name: updatejira
             - name: evaluation
               properties:
                 timeframe: "5m"
+            - name: updatejira
