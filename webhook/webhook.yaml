@@ -36,17 +36,6 @@ spec:
             name: github-secret
             key: GITHUBTOKEN
       subscriptionID: 867d0a56-69ef-4dde-87c3-264e81a14362
-    - type: sh.keptn.event.update-jira.triggered
-      requests:
-        - "curl --header 'Content-type: application/json' --request POST --data
-          '{\"type\":\"{{.type}}\",\"project\":\"{{.data.project}}\",\"service\
-          \":\"{{.data.service}}\",\"stage\":\"{{.data.stage}}\",\"shkeptnconte\
-          xt\":\"{{.shkeptncontext}}\",\"id\":\"{{.id}}\",\"createjira\":{\"url\
-          \":\"{{.data.createjira.url}}\",\"key\":\"{{.data.createjira.key}}\",\
-          \"summary\":\"{{.data.createjira.summary}}\"}}'
-          https://automation.atlassian.com/pro/hooks/59be362105d3daff7e9de49a0a\
-          c2dadb2c3cc8ae"
-      subscriptionID: 38cf2d1a-0c85-4181-b9d6-05d41954a639
     - type: sh.keptn.event.create-jira.triggered
       requests:
         - "curl --header 'Content-type: application/json' --request POST --data
