@@ -52,3 +52,25 @@ spec:
             name: jira
             key: update
       subscriptionID: 38cf2d1a-0c85-4181-b9d6-05d41954a639
+    - type: sh.keptn.event.createjira.triggered
+      requests:
+        - "curl --header 'Content-type: application/json' --request POST --data
+          '{  \"type\": \"{{.type}}\",  \"project\":
+          \"{{.data.project}}\",  \"service\":
+          \"{{.data.service}}\",  \"stage\":
+          \"{{.data.stage}}\",  \"shkeptncontext\":
+          \"{{.shkeptncontext}}\",  \"id\": \"{{.id}}\",  \"bridge\":
+          \"{{.env.secret_bridge_url}}/project/{{.data.project}}/sequence/{{.sh\
+          keptncontext}}\",  \"data\": (index .data)}'
+          https://automation.atlassian.com/pro/hooks/{{.env.secret_jira_create}\
+          }"
+      envFrom:
+        - name: secret_jira_create
+          secretRef:
+            name: jira
+            key: create
+        - name: secret_bridge_url
+          secretRef:
+            name: bridge
+            key: url
+      subscriptionID: 0dada9e6-745e-4cdb-9377-75b01120b442
