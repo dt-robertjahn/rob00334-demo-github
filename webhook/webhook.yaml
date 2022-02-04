@@ -72,8 +72,3 @@ spec:
             name: bridge
             key: url
       subscriptionID: 0dada9e6-745e-4cdb-9377-75b01120b442
-    - type: sh.keptn.event.createjira.finished
-      requests:
-        - curl --request POST --data '(index .data "createjira").url'
-          https://webhook.site/2be34b4b-8a90-47cd-ba9f-a3e237e90765
-      subscriptionID: 6ca92eae-404d-4a2c-ad9d-041ca4b13280
