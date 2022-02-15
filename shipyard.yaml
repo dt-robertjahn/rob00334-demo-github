@@ -17,4 +17,6 @@ spec:
           tasks: 
             - name: createjira
             - name: updatejira
-            
+        - name: demo-delivery
+          tasks: 
+            - name: delivery
