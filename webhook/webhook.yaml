@@ -83,3 +83,8 @@ spec:
         - curl --request POST --data '{{ .type }}'
           https://webhook.site/2be34b4b-8a90-47cd-ba9f-a3e237e90765
       subscriptionID: 1f43c1e9-910a-41e6-9059-92c177e098da
+    - type: sh.keptn.event.test.triggered
+      requests:
+        - curl --request POST --data '{{ .id }}'
+          https://webhook.site/2be34b4b-8a90-47cd-ba9f-a3e237e90765
+      subscriptionID: ba2af3fc-7f78-497d-b106-573c32148db1
