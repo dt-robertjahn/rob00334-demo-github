@@ -19,4 +19,4 @@ spec:
             - name: updatejira
         - name: demo-delivery
           tasks: 
-            - name: deployment
+            - name: test
