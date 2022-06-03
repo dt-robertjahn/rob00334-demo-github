@@ -1,0 +1,23 @@
+apiVersion: webhookconfig.keptn.sh/v1alpha1
+kind: WebhookConfig
+metadata:
+  name: webhook-configuration
+spec:
+  webhooks:
+    - type: sh.keptn.event.deployment.triggered
+      requests:
+        - "curl --header 'Authorization: token
+          {{.env.secret_githubsecret_GITHUBTOKEN}}' --request POST --data
+          '{\"event_type\":\"deployment\",\"client_payload\":{\"type\":\"{{.typ\
+          e}}\",\"project\":\"{{.data.project}}\",\"service\":\"{{.data.service\
+          }}\",\"stage\":\"{{.data.stage}}\",\"shkeptncontext\":\"{{.shkeptncon\
+          text}}\",\"id\":\"{{.id}}\"}}'
+          https://api.github.com/repos/dt-robertjahn/rob00334-demo-github/dispa\
+          tches"
+      envFrom:
+        - name: secret_githubsecret_GITHUBTOKEN
+          secretRef:
+            name: github-secret
+            key: GITHUBTOKEN
+      subscriptionID: 8a15aea9-5ca2-4356-ab65-b54e7f644e5b
+      sendFinished: false
