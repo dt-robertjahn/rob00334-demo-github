@@ -9,6 +9,37 @@ jobs:
     name: Simulate a deployment
     runs-on: ubuntu-latest
     steps:
+    - name: faking a wait
+      run: sleep 30
+    - name: started event
+      run: |
+        json=$(cat <<-END
+            {
+              "data": {
+                "project":"${{ github.event.client_payload.project }}",
+                "stage": "${{ github.event.client_payload.stage}}",
+                "service": "${{ github.event.client_payload.service}}",
+                "status": "succeeded",
+                "result": "pass",
+                "deployment": {
+                  "gitHubURL": "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+                },
+                "labels": {
+                  "gitHubURL": "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+                }
+              },
+              "source": "github-action",
+              "specversion": "1.0",
+              "type": "sh.keptn.event.deployment.started",
+              "shkeptncontext": "${{ github.event.client_payload.shkeptncontext }}",
+              "triggeredid": "${{ github.event.client_payload.id }}"
+            }
+        END
+        )
+        echo "json=$json"
+        curl -X POST "${{ secrets.KEPTN_BASE_URL }}/api/v1/event" -H "Content-Type: application/json" -H "accept: application/json" -H "x-token: ${{ secrets.KEPTN_API_TOKEN }}" -d "$json"      
+    - name: faking a wait
+      run: sleep 30
     - name: run deployment
       run: echo "Performing the deployment"
     - name: finished event
