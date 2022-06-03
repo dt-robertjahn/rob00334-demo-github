@@ -21,3 +21,4 @@ spec:
             key: GITHUBTOKEN
       subscriptionID: 8a15aea9-5ca2-4356-ab65-b54e7f644e5b
       sendFinished: false
+      sendStarted: false
